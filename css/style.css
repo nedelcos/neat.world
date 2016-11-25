@@ -23,18 +23,18 @@ body {
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 35px;
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 4rem;
+  line-height: 3rem;
 }
 
 h4 {
   font-weight: 400;
-  line-height: 2.5rem;
+  line-height: 2rem;
 }
 
 .row-centered {
@@ -51,9 +51,86 @@ h4 {
 
 /* NAVBAR */
 
+#mainNav {
+    background-color: #fff !important;
+}
+
+a.logo {
+    font-size: 30px;
+    font-weight: 900;
+    color: #000 !important;
+    width: 100%;
+}
+
+.navbar-toggle {
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #000;
+}
+
+.navbar-default {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    padding-top: 15px;
+}
+
+.navbar-toggle .icon-bar {
+    height: 4px;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent !important;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+    margin-top: 14px;
+}
+
+.navbar-right {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  top: 0;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-top: 25px;
+}
+
+.big_c {
+  display: none;
+}
+
+.small_c {
+  font-size: 2em !important;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #000 !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+}
+
+/* NETWORK */
+
+.intro-container {
+    margin-top: 240px;
+}
+
+h3#neat-is {
+  padding-bottom: 50px;
+}
+
+h3#our-goal {
+  padding-bottom: 50px;
+}
 
 
-/* NETWORK INTRO */
+/* EVERYDAY */
 
 .intro-container {
     margin-top: 240px;
@@ -101,9 +178,23 @@ h3#we {
 }
 
 @media screen and (min-width: 1300px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 4rem;
+  }
+
+  h4 {
+    font-weight: 400;
+    line-height: 2.5rem;
+  }
+
   #mainNav {
       padding-top: 80px;
-      background-color: #fff !important;
   }
 
   .nav-padd {
@@ -133,19 +224,15 @@ h3#we {
       display: inline-block;
       text-align: center;
       font-size: 2em;
-      margin-top: -5px;
+      margin-top: 76px;
+  }
+
+  .small_c {
+    display: none !important;
   }
 
   a.logo {
-      font-size: 30px;
-      font-weight: 900;
-      color: #000 !important;
-  }
-
-  .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-      color: #000 !important;
-      background-color: transparent !important;
-      font-weight: 500 !important;
+      width: auto !important;
   }
 
   .middleNav {
@@ -153,8 +240,6 @@ h3#we {
   }
 
   .navbar-default {
-      background-color: transparent !important;
-      border-color: transparent !important;
       padding-top: 30px;
   }
 
