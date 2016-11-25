@@ -115,11 +115,12 @@ a.logo {
     font-weight: 500 !important;
 }
 
-/* NETWORK */
-
 .intro-container {
     margin-top: 240px;
 }
+
+/* NETWORK */
+
 
 h3#neat-is {
   padding-bottom: 50px;
@@ -131,10 +132,6 @@ h3#our-goal {
 
 
 /* EVERYDAY */
-
-.intro-container {
-    margin-top: 70px;
-}
 
 h1#everyday {
   padding-bottom: 50px;
