@@ -133,7 +133,7 @@ h3#our-goal {
 /* EVERYDAY */
 
 .intro-container {
-    margin-top: 240px;
+    margin-top: 70px;
 }
 
 h1#everyday {
@@ -249,6 +249,20 @@ h3#we {
       font-weight: 400;
       padding: 0 !important;
       color: #000 !important
+  }
+
+  /* EVERYDAY */
+
+  .intro-container {
+      margin-top: 240px;
+  }
+
+  h1#everyday {
+    padding-bottom: 35px;
+  }
+
+  h3#we {
+    padding-bottom: 35px;
   }
 
 }
