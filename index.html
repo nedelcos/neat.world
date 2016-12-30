@@ -13,45 +13,62 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" crossorigin="anonymous">
   <link href="css/style.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/c54842ddb7.js"></script>
-  <script>
+  <!--<script>
     $(document).ready(function(){
       $("header").load("header.html");
     });
-  </script>
+  </script>-->
 </head>
 <body>
-  <header></header>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="menu-item active" id="neat">
+      <div class="menu-item-in"><a class="nav-link active" href="index.html">nEAT</a></div>
+    </div>
+    <div class="menu-item" id="office">
+      <div class="menu-item-in"><a class="nav-link" href="office.html">OFFICE</a></div>
+    </div>
+    <div class="menu-item" id="work">
+      <div class="menu-item-in"><a class="nav-link" href="work.html">WORK</a></div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="container-fluid">
+    <section class="row">
+      <img class="img-responsive" src="img/background/neat.jpg">
+    </section>
+  </div>
   <!-- NETWORK -->
   <div class="container intro-container">
     <section class="row row-centered">
-      <div class="col-centered col-lg-10">
-        <h3 id="neat-is">
-          nEAT is formed of a highly multidisciplinary staff of 10+ creative
-          professionals and includes architects, interior designers, urban
-          planners and architectural technicians. The company is directed by
-          partners Ștefan Nedelcu, Radu Barota and Matei Vlăsceanu, architects
-          and entrepreneurs with extensive experience in both design and general
-          construction management, in Romania as well as abroad (USA, Singapore,
-          Netherlands, Hong Kong).
-        </h3>
-        <h3 id="our-goal">
-          Our goal is to create vibrant, sustainable buildings that reach beyond
-          themselves and become of durable value to the user, to the society and
-          the culture that they are built into. We shape and challange the
-          physical environment – from masterplans, urban spaces and buildings to
-          interior design, – with the overall objective of providing the user
-          with a strong, visionary and thoroughly prepared design, adapted to the
-          specific context. Our ideas are developed in close collaboration with
-          the client, users and consultants in order to achieve long-lasting
-          buildings and reduced life-cycle costs. This value-based approach is
-          the key to our designs of numerous building projects - from complex
-          masterplans to successful architectural landmarks.
-        </h3>
+      <div class="col-lg-12 intro-text-cont">
+        <p class="intro-text">nEAT is formed of a highly multidisciplinary staff of 10+ creative professionals and includes architects, interior designers,
+          urban planners and architectural technicians. The company is directed by partners Ștefan Nedelcu, Radu Barota and Matei Vlăsceanu, architects and
+          entrepreneurs with extensive experience in both design and general construction management, in Romania as well as abroad (USA, Singapore, Netherlands, Hong Kong).</p>
+        <p class="intro-text">Our goal is to create vibrant, sustainable buildings that reach beyond themselves and become of durable value to the user, to
+          the society and the culture that they are built into. We shape and challange the physical environment – from masterplans, urban spaces and buildings
+          to interior design, – with the overall objective of providing the user with a strong, visionary and thoroughly prepared design, adapted to the specific
+          context. Our ideas are developed in close collaboration with the client, users and consultants in order to achieve long-lasting buildings and reduced
+          life-cycle costs. This value-based approach is the key to our designs of numerous building projects - from complex masterplans to successful architectural landmarks.</p>
+          <p class="intro-text">nEAT is formed of a highly multidisciplinary staff of 10+ creative professionals and includes architects, interior designers,
+            urban planners and architectural technicians. The company is directed by partners Ștefan Nedelcu, Radu Barota and Matei Vlăsceanu, architects and
+            entrepreneurs with extensive experience in both design and general construction management, in Romania as well as abroad (USA, Singapore, Netherlands, Hong Kong).</p>
+          <p class="intro-text">Our goal is to create vibrant, sustainable buildings that reach beyond themselves and become of durable value to the user, to
+            the society and the culture that they are built into. We shape and challange the physical environment – from masterplans, urban spaces and buildings
+            to interior design, – with the overall objective of providing the user with a strong, visionary and thoroughly prepared design, adapted to the specific
+            context. Our ideas are developed in close collaboration with the client, users and consultants in order to achieve long-lasting buildings and reduced
+            life-cycle costs. This value-based approach is the key to our designs of numerous building projects - from complex masterplans to successful architectural landmarks.</p>
       </div>
     </section>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="js/jquery.pin.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/ScrollMagic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/c54842ddb7.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
