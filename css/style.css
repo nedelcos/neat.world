@@ -106,10 +106,14 @@ li {
 .nav-link:hover {
   color: #fff;
   text-decoration: none;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .nav-link a.active {
   color: #fff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .active {
