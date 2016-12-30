@@ -115,6 +115,8 @@ li {
 .active {
   color: #fff;
   z-index: 5000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .fixed-top {
