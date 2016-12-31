@@ -20,7 +20,7 @@ $(window).bind('mousewheel', function(event) {
 });
 
 
-var Team = function(name, imgURL) {
+var Team = function(name, imgURL, bio) {
   this.name = name,
   this.imgURL = imgURL,
   this.bio = bio
