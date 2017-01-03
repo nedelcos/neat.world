@@ -55,81 +55,85 @@ li {
 
 /* SIDEBAR */
 
-.sidebar {
-  height: 100vh;
-  position: fixed;
-  padding: 3em;
-  padding-left: calc(2em + 5vw);
-  z-index: 5000;
+.main-cover {
+  position: absolute;
+  top: 0;
 }
 
-.menu-item {
-  display: block;
-  font-size: 12em;
-  font-weight: 900;
-  position: relative;
-  height: 33.3333%;
-
-}
-
-#neat {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.sidebar{
+    height: 100vh;
+    /*margin: 100px auto 0;*/
+    padding-left: calc(2em + 5vw);
+    z-index: 5000;
 }
 
 #office {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  background-image: url("C:/Users/neded/Documents/GitHub/neat.world/img/background/office.jpg");
 }
 
-#work {
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+.menu-item{
+    float: left;
+    width: 100%;
+    color: #fff;
+    font-size: 150px;
+    font-weight: 700;
+    position: relative;
+    z-index: 5001;
+    height: 33.33333vh;
 }
 
-.menu-item-in {
-  display: flex;
-  min-height: 100%;
-  align-items: center;
+#first{
+
+}
+#second{
+
+}
+#third{
+
 }
 
 .nav-link {
   color: #000;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+
 }
 
 .nav-link:hover {
   color: #fff;
   text-decoration: none;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
-.nav-link a.active {
-  color: #fff;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+   -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .active {
   color: #fff;
   z-index: 5000;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  position: relative;
 }
 
-.fixed-top {
-  position: absolute !important;
-  top: -0.39em;
-  -webkit-transition: all 0.2s ease;
--moz-transition: all 0.2s ease;
--o-transition: all 0.2s ease;
-transition: all 0.2s ease;
+.inactive {
+  z-index: 1;
+}
+
+.menu-item-in {
+
+}
+.content {
+  max-width: 700px;
+  padding: 100px;
+  font-size: 2em;
+}
+
+.cont {
+  padding: 3vh;
+  position: relative;
+  opacity: 0;
 }
 
 /* nEAT */
@@ -159,12 +163,14 @@ transition: all 0.2s ease;
     text-align: left;
     line-height: 1.4em;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .p-names-list {
-    margin-top: -2em;
+    margin-top: -110px;
     background: #fff;
     padding: 2em;
+    z-index: 5005;
 }
 
 .address {
