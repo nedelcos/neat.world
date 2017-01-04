@@ -8,7 +8,9 @@ var thirdOffset = $("#third").offset().top;
 var third = $("#third");
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > firstOffset) {
+        if ($(this).scrollTop() >
+
+        firstOffset) {
             first.css({
                 "position":"fixed",
                 "top": 0,
@@ -60,6 +62,36 @@ var third = $("#third");
             return false;
         }
     });
+
+    $(".active").hover(function() {
+      if ($("#first").offset().top == $("#second").offset().top) {
+        first.css({
+          "margin-top": 0
+        });
+        second.css({
+          "margin-top": 0,
+          '-webkit-transform': 'translate(0, 150px)'
+        });
+        third.css({
+          "margin-top": 0,
+          '-webkit-transform': 'translate(0, 300px)'
+
+        });
+      }
+    });
+
+    $(".sidebar").mouseleave(function() {
+
+      second.css({
+        "margin-top": 0,
+        '-webkit-transform': 'translate(0, 0)'
+      });
+      third.css({
+        "margin-top": 0,
+        '-webkit-transform': 'translate(0, 0)'
+      });
+
+    })
 
 //TEAM MEMBERS IMAGE CHANGING function
 
