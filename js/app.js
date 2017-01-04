@@ -1,3 +1,6 @@
+//TODO: add div to contain .sidebar and add the main img background to the new div
+//.sidebar div should not have full width (stacked menu get's fucked up) FTW
+
 // MENU STACKING FUNCTION
 
 var firstOffset = $("#first").offset().top;
@@ -126,7 +129,7 @@ Team.prototype.render = function() {
 
   $("#picStefan").show();
 
-  $("#list" + fullName).click(function() {
+  $("#list" + fullName).hover(function() {
     formattedPic = HTMLteamPic.replace("%data%", imgURL).replace("%id%", fullName);
     $(".people-pics").empty();
     $(".people-pics").append(formattedPic);
