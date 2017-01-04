@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // MENU STACKING FUNCTION
 
 var firstOffset = $("#first").offset().top;
@@ -72,32 +71,6 @@ var formattedPic, formattedNamesList;
 var Team = function(firstName, lastName, imgURL, bio) {
   this.firstName = firstName,
   this.lastName = lastName,
-=======
-//$(".menu-item").pin({padding: {top: 10, bottom: 10}});
-
-$(window).bind('mousewheel', function(event) {
-    if (event.originalEvent.wheelDelta >= 0) {
-        console.log('Scroll up');
-        $("#neat").css('-webkit-transform', 'translate(0, 0)');
-        $("#office").css('-webkit-transform', 'translate(0, 0)');
-        $("#work").css('-webkit-transform', 'translate(0, 0)');
-//        $(".menu-item").addClass('menu-item');
-
-    }
-    else {
-        console.log('Scroll down');
-        $("#neat").css('-webkit-transform', 'translate(0, calc(-50% + 12px))');
-        $("#office").css('-webkit-transform', 'translate(0, calc(-150% + 12px))');
-        $("#work").css('-webkit-transform', 'translate(0, calc(-250% + 12px))');
-//        $(".menu-item").removeClass('menu-item');
-
-    }
-});
-
-
-var Team = function(name, imgURL, bio) {
-  this.name = name,
->>>>>>> origin/master
   this.imgURL = imgURL,
   this.bio = bio
 };
@@ -135,9 +108,6 @@ team[4] = new Team("Bogdan", "Mihaila", "img/people/bogdan_m.jpg");
 team[5] = new Team("Ciprian", "Rasoiu", "img/people/ciprian_r.jpg");
 team[6] = new Team("Bogdan", "Gogoci", "img/people/bogdan_g.jpg");
 team[7] = new Team("Daniel", "Nedelcu", "img/people/daniel_n.jpg");
-
-
-
 
 
 for (var i = 0; i < team.length; i++) {
