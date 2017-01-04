@@ -67,8 +67,16 @@ li {
     z-index: 5000;
 }
 
+#neat {
+  background-image: url("C:/Users/neded/Documents/GitHub/neat.world/img/background/neat.jpg");
+}
+
 #office {
   background-image: url("C:/Users/neded/Documents/GitHub/neat.world/img/background/office.jpg");
+}
+
+#work {
+  background-image: url("C:/Users/neded/Documents/GitHub/neat.world/img/background/work.jpg");
 }
 
 .menu-item{
