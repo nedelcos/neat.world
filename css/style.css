@@ -117,12 +117,16 @@ li {
   -moz-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  text-shadow: -5px 0px 0px rgb(226, 55, 4);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(226, 55, 4);;
 }
 
 .active {
   color: #fff;
   z-index: 5000;
   position: relative;
+  text-shadow: 1px 1px rgb(0, 0, 0);
 }
 
 .inactive {

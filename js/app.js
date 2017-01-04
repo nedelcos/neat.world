@@ -7,6 +7,7 @@ var second = $("#second");
 var thirdOffset = $("#third").offset().top;
 var third = $("#third");
 
+var onScroll = function() {
     $(window).scroll(function () {
         if ($(this).scrollTop() >
 
@@ -62,9 +63,12 @@ var third = $("#third");
             return false;
         }
     });
+}
+
+onScroll();
 
     $(".active").hover(function() {
-      if ($("#first").offset().top == $("#second").offset().top) {
+      if ($("#first").offset().top == $("#third").offset().top) {
         first.css({
           "margin-top": 0
         });
