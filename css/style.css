@@ -70,14 +70,17 @@ li {
 
 #neat {
   background-image: url("img/background/neat.jpg");
+  background-size: cover;
 }
 
 #office {
   background-image: url("img/background/office.jpg");
+  background-size: cover;
 }
 
 #work {
   background-image: url("img/background/work.jpg");
+  background-size: cover;
 }
 
 .menu-item{

@@ -1,10 +1,22 @@
 // MENU STACKING FUNCTION
-var firstOffset = $("#first").offset().top;
-var first = $("#first");
-var secondOffset = $("#second").offset().top;
-var second = $("#second");
-var thirdOffset = $("#third").offset().top;
-var third = $("#third");
+var firstOffset, first, secondOffset, second, thirdOffset, third;
+$(document).ready(function() {
+  function setOffsets() {
+    firstOffset = $("#first").offset().top;
+    first = $("#first");
+    secondOffset = $("#second").offset().top;
+    second = $("#second");
+    thirdOffset = $("#third").offset().top;
+    third = $("#third");
+  }
+
+  setOffsets();
+
+  $(window).resize(setOffsets);
+
+});
+
+
 
 function divFaker() {
     $(".fakeDiv").css({
