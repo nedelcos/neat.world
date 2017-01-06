@@ -171,12 +171,7 @@ a svg {
     z-index: 5010;
 }
 
-#fakeDiv {
-    width: 160%;
-    height: 120px;
-    position: absolute;
-    z-index: 5020;
-    opacity: 0;
+.fakeDiv {
     display: none;
 }
 
