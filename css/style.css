@@ -83,12 +83,11 @@ li {
 .menu-item{
     float: left;
     width: 100%;
-    color: #fff;
-    font-size: 150px;
     font-weight: 900;
     position: relative;
     z-index: 5001;
     height: 33.33333vh;
+
 }
 
 #first{
@@ -163,7 +162,7 @@ li {
 }
 
 a svg {
-    height: 120px;
+    height: 40px;
     vertical-align: super;
 }
 
@@ -171,6 +170,17 @@ a svg {
     fill: #fff;
     z-index: 5010;
 }
+
+#fakeDiv {
+    width: 160%;
+    height: 120px;
+    position: absolute;
+    z-index: 5020;
+    opacity: 0;
+    display: none;
+}
+
+
 
 /* nEAT */
 
@@ -243,12 +253,19 @@ a svg {
 }
 
 @media screen and (min-width: 767px) and (max-width: 990px) {
-
+  a svg {
+      height: 100px;
+      vertical-align: super;
+  }
 }
 
 @media screen and (min-width: 992px) {
   p {font-size: 2em; text-align: left;}
 
+  a svg {
+      height: 120px;
+      vertical-align: super;
+  }
 }
 
 @media screen and (min-width: 1300px) {

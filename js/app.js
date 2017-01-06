@@ -1,6 +1,7 @@
 // MENU STACKING FUNCTION
 
-//$(window).resize(function () {});
+//var HTMLfakeDiv = '<div class="menu-item"><div class="menu-item-in" id="fakeDiv"></div></div>';
+
 var firstOffset = $("#first").offset().top;
 var first = $("#first");
 var secondOffset = $("#second").offset().top;
@@ -51,6 +52,11 @@ var onScroll = function() {
     });
 
  $(window).scroll(function () {
+   if ($("#first").offset().top == $("#third").offset().top) {
+     $("#fakeDiv").css({
+       "display": "block"
+     })
+   };
         if ($(this).scrollTop() > thirdOffset) {
             third.css({
                 "position":"fixed",
@@ -70,22 +76,18 @@ var onScroll = function() {
     });
 }
 
-$(document).ready(function() {
-  if($("#first").offset().top == $("#second").offset().top) {
-    $(".active").css({
-      "-webkit-text-stroke-width": "7px",
-      "-webkit-text-stroke-color": "#fff"
-    });
-
-    console.log("this")
-  }
-});
-
-
 onScroll();
 
+
     $(".sidebar").mouseenter(function() {
+
       if ($("#first").offset().top == $("#third").offset().top) {
+
+        $("#fakeDiv").css({
+          "display": "none"
+        })
+
+
         first.css({
           '-webkit-transform': 'translate(0, 5vh)'
         });
@@ -102,6 +104,11 @@ onScroll();
     });
 
     $("body").click(function() {
+
+      $("#fakeDiv").css({
+        "display": "block"
+      })
+
       if($("#first").offset().top !== firstOffset) {
           first.css({
             '-webkit-transform': 'translate(0, 0)'
