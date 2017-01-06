@@ -70,22 +70,29 @@ li {
 
 #neat {
   background-image: url("img/background/neat.jpg");
-  background-size: cover;
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 #office {
   background-image: url("img/background/office.jpg");
-  background-size: cover;
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 #work {
   background-image: url("img/background/work.jpg");
-  background-size: cover;
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 .menu-item{
-    float: left;
-    width: 100%;
     font-weight: 900;
     position: relative;
     z-index: 5001;

@@ -1,20 +1,19 @@
 // MENU STACKING FUNCTION
 var firstOffset, first, secondOffset, second, thirdOffset, third;
+
+function setOffsets() {
+  firstOffset = $("#first").offset().top;
+  first = $("#first");
+  secondOffset = $("#second").offset().top;
+  second = $("#second");
+  thirdOffset = $("#third").offset().top;
+  third = $("#third");
+}
 $(document).ready(function() {
-  function setOffsets() {
-    firstOffset = $("#first").offset().top;
-    first = $("#first");
-    secondOffset = $("#second").offset().top;
-    second = $("#second");
-    thirdOffset = $("#third").offset().top;
-    third = $("#third");
-  }
+
 
   setOffsets();
 
-  $(window).resize(setOffsets);
-
-});
 
 
 
@@ -158,6 +157,11 @@ $("body").click(function() {
     }
 })
 
+});
+
+$(window).resize(function() {
+  setOffsets();
+});
 //TEAM MEMBERS IMAGE CHANGING function
 
 var HTMLteamPic = '<img id="pic%id%" class="img-responsive p-pic col-lg-8 p-pic col-centered" src="%data%">';
