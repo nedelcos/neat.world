@@ -17,6 +17,7 @@ h6 {
 body {
     position: relative;
     overflow-x: hidden;
+    margin: 0;
 }
 .clear-fix {
     overflow: auto;
@@ -62,10 +63,10 @@ li {
 
 .sidebar{
     height: 100vh;
-    /*margin: 100px auto 0;*/
     padding-left: calc(2em + 5vw);
     z-index: 5000;
 }
+
 
 #neat {
   background-image: url("img/background/neat.jpg");
@@ -84,14 +85,17 @@ li {
     width: 100%;
     color: #fff;
     font-size: 150px;
-    font-weight: 700;
+    font-weight: 900;
     position: relative;
     z-index: 5001;
     height: 33.33333vh;
 }
 
 #first{
-
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
 }
 #second{
   -webkit-transition: all 0.35s ease;
@@ -119,22 +123,24 @@ li {
 }
 
 .nav-link:hover {
-  color: #fff;
   text-decoration: none;
-   -webkit-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  text-shadow: -5px 0px 0px rgb(226, 55, 4);
+  color: rgba(234, 234, 234, 0.46);
+  z-index: 5000;
+  position: relative;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(226, 55, 4);;
+  -webkit-text-stroke-color: #000;
 }
 
 .active {
-  color: #fff;
+  color: rgba(234, 234, 234, 0.46);
   z-index: 5000;
   position: relative;
-  text-shadow: 1px 1px rgb(0, 0, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
 }
 
 .inactive {
@@ -154,6 +160,16 @@ li {
   padding: 3vh;
   position: relative;
   opacity: 0;
+}
+
+a svg {
+    height: 120px;
+    vertical-align: super;
+}
+
+#activeIcon {
+    fill: #fff;
+    z-index: 5010;
 }
 
 /* nEAT */
