@@ -110,10 +110,10 @@ li {
 .menu-item {
     font-weight: 900;
     position: relative;
-    z-index: 5001;
-    height: 120px;
+    height: 66px;
     margin: 17.5vh 0;
     padding-left: calc(2em + 5vw);
+    z-index: 5001;
 }
 
 #first {
@@ -188,7 +188,7 @@ li {
 }
 
 a svg {
-    height: 40px;
+    height: 60px;
     vertical-align: super;
 }
 
@@ -255,6 +255,23 @@ a svg {
 
 /* MEDUA QUERIES */
 
+@media screen and (max-height: 375px) {
+    .menu-item {
+        margin: 12.5vh 0;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    a svg {
+        height: 57px;
+        vertical-align: super;
+    }
+
+    .menu-item {
+        height: 57px;
+    }
+}
+
 @media screen and (max-width: 420px) {
 }
 
@@ -271,7 +288,11 @@ a svg {
     a svg {
         height: 100px;
         vertical-align: super;
-    };
+    }
+
+    .menu-item {
+        height: 100px;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -283,7 +304,11 @@ a svg {
     a svg {
         height: 120px;
         vertical-align: super;
-    };
+    }
+
+    .menu-item {
+        height: 120px;
+    }
 }
 
 @media screen and (min-width: 1300px) {
