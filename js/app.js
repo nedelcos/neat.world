@@ -150,10 +150,13 @@ $("body").click(function() {
 })
 
 $(window).scroll(function() {
-    divFaker();
+
     if ($("#first").offset().top !== $("#third").offset().top) {
         reStack();
-    };
+        divUnfaker();
+    } else {
+      divFaker();
+    }
 });
 
 $(window).resize(function() {
