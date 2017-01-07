@@ -2,21 +2,19 @@
 var firstOffset, first, secondOffset, second, thirdOffset, third;
 
 function setOffsets() {
-  firstOffset = $("#first").offset().top;
-  first = $("#first");
-  secondOffset = $("#second").offset().top;
-  second = $("#second");
-  thirdOffset = $("#third").offset().top;
-  third = $("#third");
+    firstOffset = $("#first").offset().top;
+    first = $("#first");
+    secondOffset = $("#second").offset().top;
+    second = $("#second");
+    thirdOffset = $("#third").offset().top;
+    third = $("#third");
 }
+
 $(document).ready(function() {
+    setOffsets();
+});
 
-
-  setOffsets();
-
-
-
-
+//when called it adds a empty div on top of the stacked menu, preventing user to click on link
 function divFaker() {
     $(".fakeDiv").css({
         "display": "block",
@@ -25,15 +23,17 @@ function divFaker() {
         "width": "100%",
         "z-index": "5030",
         "opacity": 0
-    })
+    });
 }
 
+//when called it removes the empty div
 function divUnfaker() {
     $(".fakeDiv").css({
         "display": "none"
-    })
+    });
 }
 
+//when called - it expandes the stacked menu
 function unStack() {
     first.css({
         '-webkit-transform': 'translate(0, 5vh)'
@@ -49,6 +49,7 @@ function unStack() {
     });
 }
 
+//when called - it restacks the expanded menu
 function reStack() {
     first.css({
         '-webkit-transform': 'translate(0, 0)'
@@ -64,74 +65,65 @@ function reStack() {
     });
 }
 
-var onScroll = function() {
-    $(window).scroll(function() {
-        divFaker();
-
-        $("#activeIcon").css({
-            "fill": "#fff"
+$(window).scroll(function() {
+    $("#activeIcon").css({
+        "fill": "#fff"
+    });
+    if ($(this).scrollTop() > firstOffset) {
+        first.css({
+            "position": "fixed",
+            "top": 0,
         });
-        if ($(this).scrollTop() > firstOffset) {
-            first.css({
-                "position": "fixed",
-                "top": 0,
-                '-webkit-transform': 'translate(0, 0)'
-            });
-            return false;
-        } else {
-            first.css({
-                "position": "static",
-                "top": 0,
-            });
-            return false;
-        }
-    });
+        return false;
+    } else {
+        first.css({
+            "position": "static",
+            "top": 0,
+        });
+        return false;
+    }
+});
 
-    $(window).scroll(function() {
-      divFaker();
-        if ($(this).scrollTop() > secondOffset) {
-            second.css({
-                "position": "fixed",
-                "top": 0,
-                '-webkit-transform': 'translate(0, 0)'
-            });
-            return false;
-        } else {
-            second.css({
-                "position": "static",
-                "top": 0,
-            });
-            return false;
-        }
-    });
+$(window).scroll(function() {
+    if ($(this).scrollTop() > secondOffset) {
+        second.css({
+            "position": "fixed",
+            "top": 0,
+        });
+        return false;
+    } else {
+        second.css({
+            "position": "static",
+            "top": 0,
+        });
+        return false;
+    }
+});
 
-    $(window).scroll(function() {
+$(window).scroll(function() {
+    if ($(this).scrollTop() > thirdOffset) {
         divFaker();
-        if ($(this).scrollTop() > thirdOffset) {
-            third.css({
-                "position": "fixed",
-                "top": 0,
-                '-webkit-transform': 'translate(0, 0)'
-            });
-            return false;
-        } else {
-            third.css({
-                "position": "static",
-                "top": 0,
-            });
-            return false;
-        }
-    });
-}
-
-onScroll();
+        third.css({
+            "position": "fixed",
+            "top": 0,
+        });
+        return false;
+    } else {
+        divUnfaker();
+        third.css({
+            "position": "static",
+            "top": 0,
+        });
+        return false;
+    }
+});
 
 
 $(".menu-item-in").hover(function() {
     if ($("#first").offset().top == $("#third").offset().top) {
         unStack();
         setTimeout(function() {
-          divUnfaker();
+            divUnfaker();
         }, 500)
     }
 });
@@ -140,15 +132,15 @@ $(".menu-item-in").click(function() {
     if ($("#first").offset().top == $("#third").offset().top) {
         unStack();
         setTimeout(function() {
-          divUnfaker();
+            divUnfaker();
         }, 001)
     }
+});
+
+$(".menu-item-in").mouseout(function() {
 
 });
 
-$(".sidebar").mouseleave(function() {
-
-});
 
 $("body").click(function() {
     divFaker();
@@ -157,11 +149,18 @@ $("body").click(function() {
     }
 })
 
+$(window).scroll(function() {
+    divFaker();
+    if ($("#first").offset().top !== $("#third").offset().top) {
+        reStack();
+    };
 });
 
 $(window).resize(function() {
-  setOffsets();
+    setOffsets();
 });
+
+
 //TEAM MEMBERS IMAGE CHANGING function
 
 var HTMLteamPic = '<img id="pic%id%" class="img-responsive p-pic col-lg-8 p-pic col-centered" src="%data%">';

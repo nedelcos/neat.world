@@ -14,161 +14,177 @@ h6 {
     font-family: 'Roboto', sans-serif;
     color: #000;
 }
+
 body {
     position: relative;
     overflow-x: hidden;
     margin: 0;
 }
+
 .clear-fix {
     overflow: auto;
 }
 
 h1 {
-  font-size: 35px;
+    font-size: 35px;
 }
 
 h3 {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 3rem;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 3rem;
 }
 
 h4 {
-  font-weight: 400;
-  line-height: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
+
 .col-centered {
-    display:inline-block;
-    float:none;
+    display: inline-block;
+    float: none;
     /* reset the text-align */
-    text-align:left;
+    text-align: left;
     /* inline-block space fix */
-    margin-right:-4px;
+    margin-right: -4px;
 }
 
 /* SIDEBAR */
 
 .main-cover {
-  position: absolute;
-  top: 0;
+    position: absolute;
+    top: 0;
 }
 
-.sidebar{
+.sidebar {
     height: 100vh;
-    padding-left: calc(2em + 5vw);
+    /*padding-left: calc(2em + 5vw);*/
     z-index: 5000;
 }
 
-
 #neat {
-  background-image: url("img/background/neat.jpg");
-  -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+    background-image: url("img/background/neat.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-#office {
-  background-image: url("img/background/office.jpg");
-  -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+#1office {
+    background-image: url("img/background/office.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #work {
-  background-image: url("img/background/work.jpg");
-  -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+    background-image: url("img/background/work.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.menu-item{
+.intro-img {
+    position: absolute;
+    min-width: 100%;
+    height: auto;
+}
+
+.intro-cont {
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.menu-item {
     font-weight: 900;
     position: relative;
     z-index: 5001;
-    height: 33.33333vh;
-
+    height: 120px;
+    margin: 17.5vh 0;
+    padding-left: calc(2em + 5vw);
 }
 
-#first{
-  -webkit-transition: all 0.35s ease;
-  -moz-transition: all 0.35s ease;
-  -o-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+#first {
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
 }
-#second{
-  -webkit-transition: all 0.35s ease;
-  -moz-transition: all 0.35s ease;
-  -o-transition: all 0.35s ease;
-  transition: all 0.35s ease;
 
+#second {
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
 }
-#third{
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 
+#third {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .nav-link {
-  color: #000;
-  text-decoration: none;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-
+    color: #000;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .nav-link:hover {
-  text-decoration: none;
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  color: rgba(234, 234, 234, 0.46);
-  z-index: 5000;
-  position: relative;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000;
+    text-decoration: none;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    color: rgba(234, 234, 234, 0.46);
+    z-index: 5000;
+    position: relative;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
 }
 
 .active {
-  color: rgba(234, 234, 234, 0.46);
-  z-index: 5000;
-  position: relative;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000;
+    color: rgba(234, 234, 234, 0.46);
+    z-index: 5000;
+    position: relative;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
 }
 
 .inactive {
-  z-index: 1;
+    z-index: 1;
 }
 
 .menu-item-in {
-
 }
+
 .content {
-  max-width: 700px;
-  padding: 100px;
-  font-size: 2em;
+    max-width: 700px;
+    padding: 100px;
+    font-size: 2em;
 }
 
 .cont {
-  padding: 3vh;
-  position: relative;
-  opacity: 0;
+    padding: 3vh;
+    position: relative;
+    opacity: 0;
+    display: none;
 }
 
 a svg {
@@ -190,17 +206,17 @@ a svg {
 /* nEAT */
 
 .intro-container {
-  margin-bottom: 10vh;
+    margin-bottom: 10vh;
 }
 
 .intro-text-cont {
-  padding: 2em;
-  margin-top: -2em;
-  background: #fff;
+    padding: 2em;
+    margin-top: -2em;
+    background: #fff;
 }
 
 .intro-text:first-child {
-  padding-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 /* OFFICE */
@@ -221,14 +237,13 @@ a svg {
     margin-top: -110px;
     background: #fff;
     padding: 2em;
-    z-index: 5005;
 }
 
 .address {
-  font-size: 2.8em;
-  text-align: left;
-  line-height: 1.4em;
-  font-weight: 400;
+    font-size: 2.8em;
+    text-align: left;
+    line-height: 1.4em;
+    font-weight: 400;
 }
 
 .address-cont {
@@ -241,52 +256,49 @@ a svg {
 /* MEDUA QUERIES */
 
 @media screen and (max-width: 420px) {
-
 }
 
 @media screen and (max-width: 550px) {
-
 }
 
 @media screen and (max-width: 650px) {
-
-
 }
 
 @media screen and (max-width: 768px) {
-
 }
 
 @media screen and (min-width: 767px) and (max-width: 990px) {
-  a svg {
-      height: 100px;
-      vertical-align: super;
-  }
+    a svg {
+        height: 100px;
+        vertical-align: super;
+    };
 }
 
 @media screen and (min-width: 992px) {
-  p {font-size: 2em; text-align: left;}
+    p {
+        font-size: 2em;
+        text-align: left;
+    }
 
-  a svg {
-      height: 120px;
-      vertical-align: super;
-  }
+    a svg {
+        height: 120px;
+        vertical-align: super;
+    };
 }
 
 @media screen and (min-width: 1300px) {
-  h1 {
-    font-size: 55px;
-  }
+    h1 {
+        font-size: 55px;
+    }
 
-  h3 {
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 4rem;
-  }
+    h3 {
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 4rem;
+    }
 
-  h4 {
-    font-weight: 400;
-    line-height: 2.5rem;
-  }
-
+    h4 {
+        font-weight: 400;
+        line-height: 2.5rem;
+    };
 }
