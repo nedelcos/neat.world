@@ -10,9 +10,10 @@ function setOffsets() {
     third = $("#third");
 }
 
-$(document).ready(function() {
-    setOffsets();
-});
+$(document).ready(setOffsets);
+
+window.onresize = reStack;
+window.onresize = setOffsets;
 
 //when called it adds a empty div on top of the stacked menu, preventing user to click on link
 function divFaker() {
@@ -70,13 +71,13 @@ $(window).scroll(function() {
         "fill": "#fff"
     });
     if ($(this).scrollTop() > firstOffset) {
-        first.css({
+        $("#first").css({
             "position": "fixed",
             "top": 0,
         });
         return false;
     } else {
-        first.css({
+      $("#first").css({
             "position": "static",
             "top": 0,
         });
@@ -119,14 +120,14 @@ $(window).scroll(function() {
 });
 
 
-$(".menu-item-in").hover(function() {
-    if ($("#first").offset().top == $("#third").offset().top) {
-        unStack();
-        setTimeout(function() {
-            divUnfaker();
-        }, 500)
-    }
-});
+//$(".menu-item-in").hover(function() {
+//    if ($("#first").offset().top == $("#third").offset().top) {
+//        unStack();
+//        setTimeout(function() {
+//            divUnfaker();
+//        }, 500)
+//    }
+//});
 
 $(".menu-item-in").click(function() {
     if ($("#first").offset().top == $("#third").offset().top) {
@@ -159,17 +160,15 @@ $(window).scroll(function() {
     }
 });
 
-$(window).resize(function() {
-    setOffsets();
-});
 
 
 //TEAM MEMBERS IMAGE CHANGING function
 
-var HTMLteamPic = '<img id="pic%id%" class="img-responsive p-pic col-lg-8 p-pic col-centered" src="%data%">';
+var HTMLteamPic = '<img id="pic%id%" class="img-responsive p-pic p-pic col-centered" src="%data%">';
+var HTMLbio = '<div id="bio%id%" class="bio p-pic col-centered">%data%</div>';
 var HTMLnamesList = '<li id="list%id%" class="p-name">%data%</li>';
 
-var formattedPic, formattedNamesList;
+var formattedPic, formattedBio, formattedNamesList;
 
 var Team = function(firstName, lastName, imgURL, bio) {
     this.firstName = firstName,
@@ -181,6 +180,7 @@ var Team = function(firstName, lastName, imgURL, bio) {
 Team.prototype.render = function() {
     var fullName = this.firstName + this.lastName;
     var imgURL = this.imgURL;
+    var bio = this.bio;
 
     formattedName = HTMLnamesList.replace("%data%", this.firstName + " " + this.lastName).replace("%id%", fullName);
 
@@ -193,24 +193,34 @@ Team.prototype.render = function() {
 
     $("#picStefan").show();
 
-    $("#list" + fullName).hover(function() {
+    $("#list" + fullName).click(function() {
         formattedPic = HTMLteamPic.replace("%data%", imgURL).replace("%id%", fullName);
+        formattedBio = HTMLbio.replace("%data%", bio).replace("%id%", fullName);
         $(".people-pics").empty();
         $(".people-pics").append(formattedPic);
+        $(".people-pics").append(formattedBio);
         $("#pic" + fullName).show();
+        $("#bio" + fullName).show();
     });
 };
 
 var team = [];
 
-team[0] = new Team("Stefan", "Nedelcu", "img/people/stefan_n.jpg");
-team[1] = new Team("Matei", "Vlasceanu", "img/people/matei_v.jpg");
-team[2] = new Team("Mariana", "Borla", "img/people/nana_b.jpg");
-team[3] = new Team("Radu", "Barota", "img/people/radu_b.jpg");
-team[4] = new Team("Bogdan", "Mihaila", "img/people/bogdan_m.jpg");
-team[5] = new Team("Ciprian", "Rasoiu", "img/people/ciprian_r.jpg");
-team[6] = new Team("Bogdan", "Gogoci", "img/people/bogdan_g.jpg");
-team[7] = new Team("Daniel", "Nedelcu", "img/people/daniel_n.jpg");
+team[0] = new Team("Stefan", "Nedelcu", "img/people/stefan_n.jpg", "<p>STEFAN NEDELCU was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[1] = new Team("Matei", "Vlasceanu", "img/people/matei_v.jpg", "<p>MATEI VLASCEANU was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[2] = new Team("Mariana", "Borla", "img/people/nana_b.jpg", "<p>MARIANA BORLA was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[3] = new Team("Radu", "Barota", "img/people/radu_b.jpg", "<p>RADU BAROTA was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[4] = new Team("Bogdan", "Mihaila", "img/people/bogdan_m.jpg", "<p>BOGDAN MIHAILA was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[5] = new Team("Ciprian", "Rasoiu", "img/people/ciprian_r.jpg", "<p>CIPRIAN RASOIU was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[6] = new Team("Bogdan", "Gogoci", "img/people/bogdan_g.jpg", "<p>BOGDAN GOGOCI was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
+
+team[7] = new Team("Daniel", "Nedelcu", "img/people/daniel_n.jpg", "<p>DANIEL NEDELCU was born in 1986 Brasov, Romania. He studied architecture at the University of Architecture and Urbanism “Ion Mincu” in Bucharest and at KU Leuven, graduating in 2012. He gained experience through collaborations with various studios in Bucharest, by working at OMA/Rem Koolhas – Hong Kong and Rotterdam. In 2010 UNULAUNU was founded, Matei being one of the founding partners. He currently lives and works in Bucharest, Romania and since 2014 he is also a teaching assistant at the University of Architecture and Urbanism “Ion Mincu”.</p>");
 
 
 for (var i = 0; i < team.length; i++) {
