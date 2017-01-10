@@ -1,20 +1,20 @@
+$(document).ready(menuStacking);
+
+$(document).ready(function() {
+  window.onresize = menuStacking;
+});
+
+
+
+
 // MENU STACKING FUNCTION
+function menuStacking() {
+
 var firstOffset, first, secondOffset, second, thirdOffset, third;
 
-firstOffset = $("#first").offset().top;
-secondOffset = $("#second").offset().top;
-thirdOffset = $("#third").offset().top;
-
-function setOffsets() {
     firstOffset = $("#first").offset().top;
     secondOffset = $("#second").offset().top;
     thirdOffset = $("#third").offset().top;
-}
-
-//$(document).ready(setOffsets);
-
-window.onresize = setOffsets;
-window.onresize = reStack;
 
 //when called it adds a empty div on top of the stacked menu, preventing user to click on link
 function divFaker() {
@@ -170,6 +170,7 @@ $(window).scroll(function() {
     }
 });
 
+}
 
 //TEAM MEMBERS IMAGE CHANGING function
 
