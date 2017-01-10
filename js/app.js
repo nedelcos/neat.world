@@ -1,19 +1,19 @@
 // MENU STACKING FUNCTION
 var firstOffset, first, secondOffset, second, thirdOffset, third;
 
+firstOffset = $("#first").offset().top;
+secondOffset = $("#second").offset().top;
+thirdOffset = $("#third").offset().top;
+
 function setOffsets() {
     firstOffset = $("#first").offset().top;
-    first = $("#first");
     secondOffset = $("#second").offset().top;
-    second = $("#second");
     thirdOffset = $("#third").offset().top;
-    third = $("#third");
 }
 
-$(document).ready(setOffsets);
+//$(document).ready(setOffsets);
 
-window.onresize = reStack;
-window.onresize = setOffsets;
+//window.onresize = setOffsets;
 
 //when called it adds a empty div on top of the stacked menu, preventing user to click on link
 function divFaker() {
@@ -36,13 +36,13 @@ function divUnfaker() {
 
 //when called - it expandes the stacked menu
 function unStack() {
-    first.css({
+    $("#first").css({
         '-webkit-transform': 'translate(0, 5vh)'
     });
-    second.css({
+    $("#second").css({
         '-webkit-transform': 'translate(0, 44vh)'
     });
-    third.css({
+    $("#third").css({
         '-webkit-transform': 'translate(0, 82vh)'
     });
     $("#activeIcon").css({
@@ -52,13 +52,13 @@ function unStack() {
 
 //when called - it restacks the expanded menu
 function reStack() {
-    first.css({
+    $("#first").css({
         '-webkit-transform': 'translate(0, 0)'
     })
-    second.css({
+    $("#second").css({
         '-webkit-transform': 'translate(0, 0)'
     });
-    third.css({
+    $("#third").css({
         '-webkit-transform': 'translate(0, 0)'
     });
     $("#activeIcon").css({
@@ -87,13 +87,13 @@ $(window).scroll(function() {
 
 $(window).scroll(function() {
     if ($(this).scrollTop() > secondOffset) {
-        second.css({
+        $("#second").css({
             "position": "fixed",
             "top": 0,
         });
         return false;
     } else {
-        second.css({
+      $("#second").css({
             "position": "static",
             "top": 0,
         });
@@ -104,14 +104,14 @@ $(window).scroll(function() {
 $(window).scroll(function() {
     if ($(this).scrollTop() > thirdOffset) {
         divFaker();
-        third.css({
+        $("#third").css({
             "position": "fixed",
             "top": 0,
         });
         return false;
     } else {
         divUnfaker();
-        third.css({
+        $("#third").css({
             "position": "static",
             "top": 0,
         });
@@ -129,14 +129,24 @@ $(window).scroll(function() {
 //    }
 //});
 
+var fired = true;
+window.addEventListener("scroll", function(){
+  if (fired === false) {
+    setOffsets();
+    console.log('This will happen only once')
+    fired = true;
+  }
+}, true)
+
 $(".menu-item-in").click(function() {
     if ($("#first").offset().top == $("#third").offset().top) {
         unStack();
         setTimeout(function() {
             divUnfaker();
-        }, 001)
+        }, 001);
     }
 });
+
 
 $(".menu-item-in").mouseout(function() {
 
@@ -151,7 +161,6 @@ $("body").click(function() {
 })
 
 $(window).scroll(function() {
-
     if ($("#first").offset().top !== $("#third").offset().top) {
         reStack();
         divUnfaker();
@@ -159,7 +168,6 @@ $(window).scroll(function() {
       divFaker();
     }
 });
-
 
 
 //TEAM MEMBERS IMAGE CHANGING function
