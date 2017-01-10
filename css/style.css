@@ -69,17 +69,19 @@ li {
     z-index: 5000;
 }
 
-#neat {
+#m-neat {
+  margin-top: 5vh;
+}
+
+#m-office {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#m-work {
 
 }
 
-#office {
-
-}
-
-#work {
-
-}
 
 .intro-img {
 
@@ -90,15 +92,14 @@ li {
 .intro-cont {
     height: 100vh;
     position: absolute;
-    width: 100%;
     overflow: hidden;
+    z-index: -1;
 }
 
 .menu-item {
     font-weight: 900;
     position: relative;
     height: 66px;
-    margin: 15.5vh 0;
     padding-left: calc(2em + 5vw);
     z-index: 5001;
 }
@@ -261,7 +262,7 @@ a svg {
 }
 
 .address {
-    font-size: 2.8em;
+    font-size: 4em;
     text-align: left;
     line-height: 1.4em;
     font-weight: 400;
@@ -270,14 +271,48 @@ a svg {
 .address-cont {
     background: #fff;
     padding: 2em;
+    margin-top: -4em;
+    margin-bottom: -4em;
+    margin-left: calc(2em + 5vw);
 }
+
+.contact {
+    font-size: 4em;
+    text-align: left;
+    line-height: 1.4em;
+    font-weight: 400;
+}
+
+.contact-cont {
+    background: #fff;
+    padding: 1em;
+    margin-top: 12em;
+    max-width: 700px;
+    margin-right: calc(2em + 5vw);
+}
+
+.social {
+    font-size: 4em;
+    text-align: left;
+    line-height: 1.4em;
+    font-weight: 400;
+}
+
+.social-cont {
+    background: #fff;
+    padding: 1em;
+    margin-top: 12em;
+    margin-left: calc(2em + 5vw);
+}
+
+
 
 
 /* MEDUA QUERIES */
 
 @media screen and (max-height: 375px) {
     .menu-item {
-        margin: 11vh 0;
+
     }
 }
 
@@ -294,7 +329,7 @@ a svg {
 
 @media screen and (max-width: 420px) {
   .menu-item {
-      margin: 17vh 0;
+
   }
 }
 
@@ -324,7 +359,7 @@ a svg {
 
     .menu-item {
         height: 100px;
-        margin: 18vh 0;
+
     }
 
     .intro-container {
@@ -355,7 +390,7 @@ a svg {
 
     .menu-item {
         height: 110px;
-        margin: 14vh 0;
+
     }
 
     .p-name {
@@ -380,7 +415,7 @@ a svg {
     }
 
     .menu-item {
-        margin: 16vh 0;
+
     }
 
     .p-name {

@@ -13,7 +13,8 @@ function setOffsets() {
 
 //$(document).ready(setOffsets);
 
-//window.onresize = setOffsets;
+window.onresize = setOffsets;
+window.onresize = reStack;
 
 //when called it adds a empty div on top of the stacked menu, preventing user to click on link
 function divFaker() {
@@ -40,10 +41,10 @@ function unStack() {
         '-webkit-transform': 'translate(0, 5vh)'
     });
     $("#second").css({
-        '-webkit-transform': 'translate(0, 44vh)'
+        '-webkit-transform': 'translate(0, 37vh)'
     });
     $("#third").css({
-        '-webkit-transform': 'translate(0, 82vh)'
+        '-webkit-transform': 'translate(0, 70vh)'
     });
     $("#activeIcon").css({
         "fill": "#000"
@@ -201,7 +202,7 @@ Team.prototype.render = function() {
 
     $("#picStefan").show();
 
-    $("#list" + fullName).click(function() {
+    $("#list" + fullName).hover(function() {
         formattedPic = HTMLteamPic.replace("%data%", imgURL).replace("%id%", fullName);
         formattedBio = HTMLbio.replace("%data%", bio).replace("%id%", fullName);
         $(".people-pics").empty();
